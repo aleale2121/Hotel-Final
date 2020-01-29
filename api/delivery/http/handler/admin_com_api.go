@@ -3,7 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/comment"
+	"github.com/aleale2121/Hotel-Final/api/comment"
 	"net/http"
 	"strconv"
 )

@@ -1,8 +1,8 @@
 package com_Service
 import (
 
-"github.com/yuidegm/Hotel-Rental-Managemnet-System/comment"
-"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
+"github.com/aleale2121/Hotel-Final/comment"
+"github.com/aleale2121/Hotel-Final/entity"
 )
 
 // RoomServiceImpl implements rooms.RoomService interface

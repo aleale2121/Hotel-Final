@@ -3,7 +3,7 @@ package repository
 import (
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/entity"
 )
 
 // RoleGormRepo implements the menu.RoleRepository interface

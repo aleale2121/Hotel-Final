@@ -2,8 +2,8 @@ package events_services
 
 import (
 	"fmt"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/events"
+	"github.com/aleale2121/Hotel-Final/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/events"
 )
 
 // CommentService implements menu.CommentService interface

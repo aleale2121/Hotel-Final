@@ -1,8 +1,8 @@
 package services
 import (
 	"fmt"
- "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
- "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/order"
+ "github.com/aleale2121/Hotel-Final/api/entity"
+ "github.com/aleale2121/Hotel-Final/api/order"
 )
 
 // OrderService implements menu.OrderService interface

@@ -3,8 +3,8 @@ package repository
 import (
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/rate"
+	"github.com/aleale2121/Hotel-Final/entity"
+	"github.com/aleale2121/Hotel-Final/rate"
 )
 
 // RateGormRepo implements rate.RateRepository  interface

@@ -2,10 +2,10 @@ package news_repository
 
 import (
 	"errors"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/news"
+	"github.com/aleale2121/Hotel-Final/api/news"
 
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/entity"
 )
 
 // MockEventsRepo implements the menu.CategoryRepository interface

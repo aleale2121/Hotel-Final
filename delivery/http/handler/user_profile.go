@@ -6,7 +6,7 @@ package handler
 import (
     "encoding/json"
     "fmt"
-    "github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
+    "github.com/aleale2121/Hotel-Final/entity"
     "html/template"
     "io/ioutil"
     "net/http"

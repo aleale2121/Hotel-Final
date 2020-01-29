@@ -4,7 +4,7 @@ package news_repository
 import (
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
+	"github.com/aleale2121/Hotel-Final/entity"
 )
 
 // RoomRepositoryImpl implements the rooms.RoomRepository interface

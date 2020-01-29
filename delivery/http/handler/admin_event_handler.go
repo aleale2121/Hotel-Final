@@ -2,10 +2,10 @@ package handler
 
 import (
 	"fmt"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/events"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/form"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/rtoken"
+	"github.com/aleale2121/Hotel-Final/entity"
+	"github.com/aleale2121/Hotel-Final/events"
+	"github.com/aleale2121/Hotel-Final/form"
+	"github.com/aleale2121/Hotel-Final/rtoken"
 	"html/template"
 	"io"
 	"mime/multipart"

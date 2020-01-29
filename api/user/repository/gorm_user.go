@@ -3,9 +3,9 @@ package repository
 import (
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	user "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/user"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/utils"
+	"github.com/aleale2121/Hotel-Final/api/entity"
+	user "github.com/aleale2121/Hotel-Final/api/user"
+	"github.com/aleale2121/Hotel-Final/api/utils"
 )
 
 // OrderGormRepo implements the menu.repository interface

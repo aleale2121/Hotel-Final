@@ -5,9 +5,9 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/julienschmidt/httprouter"
 	_ "github.com/lib/pq"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api_bank/bank/repository"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api_bank/bank/services"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api_bank/delivery/http/handler"
+	"github.com/aleale2121/Hotel-Final/api_bank/bank/repository"
+	"github.com/aleale2121/Hotel-Final/api_bank/bank/services"
+	"github.com/aleale2121/Hotel-Final/api_bank/delivery/http/handler"
 	"net/http"
 )
 

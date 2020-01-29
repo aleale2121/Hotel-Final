@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/news"
+	"github.com/aleale2121/Hotel-Final/entity"
+	"github.com/aleale2121/Hotel-Final/news"
 	"html/template"
 	"net/http"
 )

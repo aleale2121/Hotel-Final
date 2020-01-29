@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/comment"
+	"github.com/aleale2121/Hotel-Final/comment"
 )
 
 // AdminCommentHandler handles comment related http requests

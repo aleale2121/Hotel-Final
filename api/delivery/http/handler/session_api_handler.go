@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/julienschmidt/httprouter"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	us "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/user"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/utils"
+	"github.com/aleale2121/Hotel-Final/api/entity"
+	us "github.com/aleale2121/Hotel-Final/api/user"
+	"github.com/aleale2121/Hotel-Final/api/utils"
 	"net/http"
 )
 

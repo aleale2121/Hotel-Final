@@ -1,5 +1,5 @@
 package comment
-import "github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
+import "github.com/aleale2121/Hotel-Final/entity"
 
 // CategoryService specifies food menu category news_services
 type CommentServices interface {

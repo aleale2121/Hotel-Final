@@ -1,6 +1,6 @@
 package news
 
-import "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+import "github.com/aleale2121/Hotel-Final/api/entity"
 
 // CategoryService specifies food menu category news_services
 type NewsRepository interface {

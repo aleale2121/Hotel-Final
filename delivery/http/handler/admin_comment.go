@@ -2,7 +2,7 @@
 package handler
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/comment"
+	"github.com/aleale2121/Hotel-Final/comment"
 	"html/template"
 
 	"net/http"

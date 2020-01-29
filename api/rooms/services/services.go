@@ -2,8 +2,8 @@ package services
 
 import (
 	"fmt"
-  "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/rooms"
+  "github.com/aleale2121/Hotel-Final/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/rooms"
 )
 
 // RoomServiceImpl implements rooms.RoomService interface

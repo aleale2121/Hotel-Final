@@ -4,8 +4,8 @@ import (
 	"errors"
 
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/comment"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/comment"
+	"github.com/aleale2121/Hotel-Final/api/entity"
 )
 
 // MockComRepo implements the menu.CategoryRepository interface

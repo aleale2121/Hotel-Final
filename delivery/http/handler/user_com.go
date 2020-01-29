@@ -2,12 +2,12 @@
 package handler
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/form"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/rtoken"
+	"github.com/aleale2121/Hotel-Final/entity"
+	"github.com/aleale2121/Hotel-Final/form"
+	"github.com/aleale2121/Hotel-Final/rtoken"
 	"net/url"
 
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/comment"
+	"github.com/aleale2121/Hotel-Final/comment"
 	"html/template"
 
 	"net/http"

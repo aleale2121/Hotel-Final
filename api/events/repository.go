@@ -1,7 +1,7 @@
 package events
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/entity"
 )
 
 // CategoryService specifies food menu category news_services

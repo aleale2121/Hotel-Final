@@ -2,8 +2,8 @@ package events_services
 
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/events"
+	"github.com/aleale2121/Hotel-Final/entity"
+	"github.com/aleale2121/Hotel-Final/events"
 )
 
 // RoomServiceImpl implements rooms.RoomService interface

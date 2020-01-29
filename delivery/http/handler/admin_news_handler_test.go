@@ -2,9 +2,9 @@ package handler
 
 import (
 	"bytes"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/news/news_repository"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/news/news_services"
+	"github.com/aleale2121/Hotel-Final/entity"
+	"github.com/aleale2121/Hotel-Final/news/news_repository"
+	"github.com/aleale2121/Hotel-Final/news/news_services"
 	"html/template"
 	"io/ioutil"
 

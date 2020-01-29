@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api_bank/bank"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api_bank/entity"
+	"github.com/aleale2121/Hotel-Final/api_bank/bank"
+	"github.com/aleale2121/Hotel-Final/api_bank/entity"
 )
 
 // RoomServiceImpl implements rooms.RoomService interface

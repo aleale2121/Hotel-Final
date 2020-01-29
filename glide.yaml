@@ -1,0 +1,63 @@
+package: .
+import:
+- package: github.com/dgrijalva/jwt-go
+  version: ~4.0.0-preview1
+- package: github.com/jinzhu/gorm
+  version: ~1.9.12
+  subpackages:
+  - dialects/mysql
+- package: github.com/julienschmidt/httprouter
+  version: ~1.3.0
+- package: github.com/lib/pq
+  version: ~1.3.0
+- package: github.com/yuidegm/Hotel-Rental-Managemnet-System
+  subpackages:
+  - api/comment
+  - api/delivery/http/handler
+  - api/entity
+  - api/events
+  - api/events/events_repository
+  - api/events/events_services
+  - api/news
+  - api/news/news_repository
+  - api/news/news_services
+  - api/order
+  - api/order/repository
+  - api/order/services
+  - api/rate
+  - api/rate/repository
+  - api/rate/services
+  - api/rooms
+  - api/rooms/repository
+  - api/rooms/services
+  - api/user
+  - api/user/repository
+  - api/user/services
+  - api/utils
+  - api_bank/bank
+  - api_bank/bank/repository
+  - api_bank/bank/services
+  - api_bank/delivery/http/handler
+  - api_bank/entity
+  - comment
+  - comment/com_Repository
+  - comment/com_Service
+  - delivery/http/handler
+  - entity
+  - events
+  - events/events_repository
+  - events/events_services
+  - form
+  - news
+  - news/news_repository
+  - news/news_services
+  - permission
+  - rate
+  - rate/repository
+  - rate/services
+  - rtoken
+  - session
+  - utils
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt

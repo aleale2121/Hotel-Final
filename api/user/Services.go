@@ -1,5 +1,5 @@
 package order
-import "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+import "github.com/aleale2121/Hotel-Final/api/entity"
 // repository specifies customer menu order related database operations
 type UserService interface {
 	Users() ([]entity.User, error)

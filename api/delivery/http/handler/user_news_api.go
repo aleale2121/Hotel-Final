@@ -2,7 +2,7 @@ package handler
 
 import (
 	"fmt"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/news"
+	"github.com/aleale2121/Hotel-Final/api/news"
 	"html/template"
 	"net/http"
 )

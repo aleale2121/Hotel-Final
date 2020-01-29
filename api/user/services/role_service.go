@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	user "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/user"
+	"github.com/aleale2121/Hotel-Final/api/entity"
+	user "github.com/aleale2121/Hotel-Final/api/user"
 )
 
 // RoleService implements menu.RoleService interface

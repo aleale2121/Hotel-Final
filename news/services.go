@@ -1,6 +1,6 @@
 package news
 
-import "github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
+import "github.com/aleale2121/Hotel-Final/entity"
 
 // NewsService specifies News menu News news_services
 type NewsService interface {

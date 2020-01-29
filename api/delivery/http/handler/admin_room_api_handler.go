@@ -3,9 +3,9 @@ package handler
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/rooms"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/utils"
+	"github.com/aleale2121/Hotel-Final/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/rooms"
+	"github.com/aleale2121/Hotel-Final/api/utils"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
 	"strconv"

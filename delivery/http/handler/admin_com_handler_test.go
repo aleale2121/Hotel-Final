@@ -2,8 +2,8 @@ package handler
 
 import (
 	"bytes"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/comment/com_Repository"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/comment/com_Service"
+	"github.com/aleale2121/Hotel-Final/comment/com_Repository"
+	"github.com/aleale2121/Hotel-Final/comment/com_Service"
 	"html/template"
 	"io/ioutil"
 	"net/http"

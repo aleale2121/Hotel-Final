@@ -3,8 +3,8 @@ package events_repository
 import (
 	"errors"
 
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/events"
+	"github.com/aleale2121/Hotel-Final/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/events"
 	"github.com/jinzhu/gorm"
 )
 

@@ -1,6 +1,6 @@
 package bank
 
-import "github.com/yuidegm/Hotel-Rental-Managemnet-System/api_bank/entity"
+import "github.com/aleale2121/Hotel-Final/api_bank/entity"
 
 type Repository interface {
 	RetrieveAccountFromBank(id int64) (*entity.Customer, []error)

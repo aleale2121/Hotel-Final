@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/comment/com_Repository"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/comment/com_Service"
+	"github.com/aleale2121/Hotel-Final/api/comment/com_Repository"
+	"github.com/aleale2121/Hotel-Final/api/comment/com_Service"
 )
 
 func TestGetCom(t *testing.T) {

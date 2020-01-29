@@ -1,5 +1,5 @@
 package rate
-import "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+import "github.com/aleale2121/Hotel-Final/api/entity"
 
 
 

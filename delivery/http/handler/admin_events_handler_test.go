@@ -2,9 +2,9 @@ package handler
 
 import (
 	"bytes"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/entity"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/events/events_repository"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/events/events_services"
+	"github.com/aleale2121/Hotel-Final/entity"
+	"github.com/aleale2121/Hotel-Final/events/events_repository"
+	"github.com/aleale2121/Hotel-Final/events/events_services"
 	"html/template"
 	"io/ioutil"
 	"net/http"

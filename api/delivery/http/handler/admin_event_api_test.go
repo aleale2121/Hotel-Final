@@ -10,8 +10,8 @@ import (
 "net/http/httptest"
 "testing"
 //"github.com/stretchr/testify/assert"
-"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/events/events_repository"
-"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/events/events_services"
+"github.com/aleale2121/Hotel-Final/api/events/events_repository"
+"github.com/aleale2121/Hotel-Final/api/events/events_services"
 )
 
 func TestGetEvents(t *testing.T) {

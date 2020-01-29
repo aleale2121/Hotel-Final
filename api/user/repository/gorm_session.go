@@ -2,8 +2,8 @@ package repository
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
-	us "github.com/yuidegm/Hotel-Rental-Managemnet-System/api/user"
+	"github.com/aleale2121/Hotel-Final/api/entity"
+	us "github.com/aleale2121/Hotel-Final/api/user"
 )
 
 // SessionGormRepo implements user.SessionRepository interface

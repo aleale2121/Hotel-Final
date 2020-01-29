@@ -3,8 +3,9 @@ package com_Repository
 import (
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/comment"
-	"github.com/yuidegm/Hotel-Rental-Managemnet-System/api/entity"
+	"github.com/aleale2121/Hotel-Final/api/comment"
+	"github.com/aleale2121/Hotel-Final/entity"
+
 )
 
 // RoomRepositoryImpl implements the rooms.RoomRepository interface
