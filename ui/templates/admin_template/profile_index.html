@@ -1,0 +1,22 @@
+{{ define "user_profile.layout" }}
+
+
+
+{{ template "user_profile.content" . }}
+
+
+{{ end }}
+
+{{ define "user_profile.content" }}
+
+<div class="wrapper">
+    {{ template "sidebar" . }}
+    <div class="main-panel">
+        {{ template "navbar" . }}
+        {{ template "user_profile" }}
+        {{ template "admin_footer" . }}
+       
+    </div> 
+
+</div>
+{{ end }}

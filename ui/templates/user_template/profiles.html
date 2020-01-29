@@ -1,0 +1,116 @@
+{{define  "profile.layout"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profiles</title>
+    <link rel="stylesheet" type="text/css" href="./../../assets/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container ">
+
+        <div class="cl-lg-12 " >
+            <a class="btn btn-warning" style="float:right" href="/logout">Logout</a>
+        </div>
+       <br>
+       <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h4 class="card-title text-center" >Profiles</h4>
+                        </div>
+                        <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address  : </label>
+                                            <span>{{.UserInfo.Email}} </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <div class="form-group">
+                                            <label>Full Name :</label>
+                                            <span>{{.UserInfo.FullName}} </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <div class="form-group">
+                                            <label>Phone Number:</label>
+                                            <span>{{.UserInfo.Phone}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                          </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <table width="100"  class="table table-striped table-bordered " cellspacing="0" id="dtMaterialDesignExample" style="padding: 20px">
+        <tr style="column-span: 4"> <p style="text-align: center" class="alert alert-success">Rooms Reserved For Your</p></tr>
+        <thead>
+        <tr style="background:rgba(175,5,9,0.87) ">
+
+            <th style="color: black ;" scope="col" >ArrivalDate</th>
+            <th style="color: black ;" scope="col" >Room Number</th>
+            <th  style="color: black"  scope="col">DepartureDate</th>
+            <th  style="color: black" scope="col">Adults</th>
+            <!--<th style="color: black"  scope="col">Room Type</th> -->
+            <th  style="color: black" scope="col">Child</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        {{ range .UserOrderInfo }}
+        <tr>
+            <td class="tableRoomNo"> {{ .Room.Price }} </td>
+            <td class="tableRoomNo"> {{ .ArrivalDate }} </td>
+            <td class="tableRoomNo"> {{ .DepartureDate }} </td>
+            <td class="tableRoomNo"> {{ .Adults }} </td>
+            <td class="tablePrice"> {{ .Child }} </td>
+            <!--  <td class="tableType"> x </td> -->
+
+        </tr>
+
+        {{end}}
+
+        </tbody>
+    </table>
+
+</div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        $('#roomTable').DataTable();
+        $('#dtMaterialDesignExample_wrapper').find('label').each(function () {
+            $(this).parent().append($(this).children());
+        });
+        $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('input').each(function () {
+            const $this = $(this);
+            $this.attr("placeholder", "Search");
+            $this.removeClass('form-control-sm');
+        });
+        $('#dtMaterialDesignExample_wrapper .dataTables_length').addClass('d-flex flex-row');
+        $('#dtMaterialDesignExample_wrapper .dataTables_filter').addClass('md-form');
+        $('#dtMaterialDesignExample_wrapper select').removeClass(
+            '       custom-select custom-select-sm form-control form-control-sm');
+        $('#dtMaterialDesignExample_wrapper select').addClass('mdb-select');
+        $('#dtMaterialDesignExample_wrapper .mdb-select').materialSelect();
+        $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('label').remove();
+    });
+</script>
+</body>
+</html>
+{{end}}

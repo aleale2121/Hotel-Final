@@ -1,0 +1,47 @@
+{{define "login.layout"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+    <!-- Default form register -->
+    <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33 align-self-md-center">
+        <form class="text-center border border-light p-2 col-md-3" method="post" action="/login">
+
+            <p class="h4 mb-4">Login</p>
+            <div class="wrap-input100 validate-input">
+                <input type="hidden" name="_csrf" value="{{ .CSRF }}" />
+                {{with .VErrors.Get "generic" }}
+                    <label class="text-danger">{{ . }}</label>
+                {{end}}
+            </div>
+            <!-- First name -->
+            <input id="defaultRegisterFormFirstName" class="input100 form-control mb-4" type="text" name="email" placeholder="Username" >
+            <br>
+            <!-- E-mail -->
+
+            <input id="defaultRegisterFormEmail" class="input100 form-control mb-4" type="password" name="password" placeholder="password" >
+            <div class="container-login100-form-btn m-t-17">
+                <input  type="submit" class="input100 form-control mb-4 btn-primary" value="login" class="login100-form-btn"/>
+
+            </div>
+
+            <div class="w-full text-center p-t-55">
+
+                <div class="text-center p-t-90">
+                    <a class="txt1" href="/signup">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Default form register -->
+    <script src="../../assets/vendor/bootstrap/js/popper.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+{{end}}

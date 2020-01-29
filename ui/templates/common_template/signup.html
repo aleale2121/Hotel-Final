@@ -1,0 +1,67 @@
+{{define "signup.layout"}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<!-- Default form register -->
+<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33 align-self-md-center  align-content-center">
+<form class="text-center border border-light p-2 col-md-3" method="post" action="/signup">
+
+    <p class="h4 mb-4">Sign up</p>
+    <input type="hidden" name="_csrf" value="{{ .CSRF }}" />
+  <label for="full_name"></label>
+    <input id="defaultRegisterFormFirstName" class="form-control mb-4" type="text" name="full_name" placeholder="Full Name">
+    {{with .VErrors.Get "fullname"}}
+        <label class="text-danger">{{.}}</label>
+    {{end}}
+    <br>
+
+    <!-- E-mail -->
+    <label for="email"></label>
+    <input type="email" name="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+    {{with .VErrors.Get "email"}}
+        <label class="text-danger">{{.}}</label>
+    {{end}}
+    <br>
+    <label for="phone"></label>
+    <input id="defaultRegisterFormFirstName" class="form-control mb-4" type="text" name="phone" placeholder="Phone Number">
+    {{with .VErrors.Get "phone"}}
+        <label class="text-danger">{{.}}</label>
+    {{end}}
+    <!-- Password -->
+    <br>
+
+    <label for="password"></label>
+        <input id="defaultRegisterFormPassword" class="form-control mb-4" type="password" name="password" placeholder="Password">
+    {{with .VErrors.Get "password"}}
+        <label class="text-danger">{{.}}</label>
+    {{end}}
+<br>
+    <label for="password_confirmed"></label>
+        <input id="defaultRegisterFormPassword" class="form-control mb-4" type="password" name="password_confirmed" placeholder="Confirmed Password">
+    {{with .VErrors.Get "confirmpassword"}}
+        <label class="text-danger">{{.}}</label>
+    {{end}}
+    <br>
+
+    <!-- Sign up button -->
+    <input href="/signup" class="btn btn-info my-4 btn-block" type="submit"/>
+    <a class="txt1" href="/login">
+        Already Have An Account
+    </a>
+
+
+</form>
+</div>
+<!-- Default form register -->
+<script src="../../assets/vendor/bootstrap/js/popper.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+{{end}}

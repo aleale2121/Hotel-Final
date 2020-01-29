@@ -1,0 +1,22 @@
+{{ define "map_index.layout" }}
+
+
+
+{{ template "map_index.content" . }}
+
+
+{{ end }}
+
+{{ define "map_index.content" }}
+
+<div class="wrapper">
+    {{ template "sidebar" . }}
+    <div class="main-panel">
+        {{ template "navbar" . }}
+        {{ template "maps" }}
+        {{ template "admin_footer" . }}
+
+    </div>
+
+</div>
+{{ end }}

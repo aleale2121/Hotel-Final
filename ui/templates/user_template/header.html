@@ -1,0 +1,125 @@
+{{ define "header" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Radisun-Blue</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Hotel template project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./../../assets/css/bootstrap.min.css">
+        <link href="./../../assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./../../assets/plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="./../../assets/plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+        <link rel="stylesheet" type="text/css" href="./../../assets/plugins/OwlCarousel2-2.3.4/animate.css">
+        <link href="../../assets/plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./../../assets/css/main_styles.css">
+        <link rel="stylesheet" type="text/css" href="./../../assets/css/responsive.css">
+        <link rel="stylesheet" href="../../assets/events/css/all.css">
+
+
+        <!-- --------- Owl-Carousel ------------------->
+        <link rel="stylesheet" href="../../assets/events/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../../assets/events/css/owl.theme.default.min.css">
+
+        <!-- ------------ AOS Library ------------------------- -->
+        <link rel="stylesheet" href="../../assets/events/css/aos.css">
+
+        <!-- Custom Style   -->
+        <link rel="stylesheet" href="../../assets/events/css/Style.css">
+
+        <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/contact.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../../assets/js/jquery-3.4.1.min.js"></script>
+        <script src="../../assets/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+
+    <header class="header">
+        {{ if (eq .IsLogged "true") }}
+            <div  style=" margin-left:20px; margin-top:10px;float: right; text-align: center;">
+                <a href="/profile" class="btn btn-warning btn-circle btn-lg text-white text-center" style=" color: #87CB16;width: 70px;height: 70px;border-radius: 35px;text-align: center;font-size: 12px;">Profile</a>
+
+
+            </div>
+        {{ end }}
+
+        <div class="header_content d-flex flex-column align-items-center justify-content-lg-end justify-content-center">
+
+            <!-- Logo -->
+            <div class="logo"><a href="#"><img class="logo_1" src="../../assets/img/logo.png" alt=""></a></div>
+
+            <!-- Main Nav -->
+            <nav class="main_nav">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li  class="active"><a class="home" href="/">Home</a></li>
+                    <li><a  id="roomss" href="/rooms">Rooms</a></li>
+                    <li><a  id="news" href="/newss">News</a></li>
+                    <li><a  id="events" href="/event">Event</a></li>
+                    <li><a id="contacts" href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Social -->
+            <div class="social header_social">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            {{ if (eq .IsLogged "false") }}
+                <!-- Header Right -->
+                <div class="header_right d-flex flex-row align-items-center justify-content-start">
+
+                    <nav class="main_nav">
+                        <ul class="d-flex flex-row align-items-center justify-content-start">
+                            <li  class="login"><a class="btn btn-primary" href="/login">Login</a></li>
+                            <li class="signup"> <a class="btn btn-success"  href="/signup">SignUp</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            {{end}}
+
+            <!-- Search Panel -->
+            <div class="search_panel">
+                <div class="search_panel_content d-flex flex-row align-items-center justify-content-start">
+                    <img src="../../assets/img/search.png" alt="">
+                    <form action="#" class="search_form">
+                        <input type="text" class="search_input" placeholder="Type your search here" required="required">
+                    </form>
+                    <div class="search_close ml-auto d-flex flex-column align-items-center justify-content-center"><div></div></div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <script src="./../../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="./../../assets/js/popper.js"></script>
+    <script src="./../../assets/js/bootstrap.min.js"></script>
+    <script src="./../../assets/plugins/greensock/TweenMax.min.js"></script>
+    <script src="./../../assets/plugins/greensock/TimelineMax.min.js"></script>
+    <script src="./../../assets/plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="./../../assets/plugins/greensock/animation.gsap.min.js"></script>
+    <script src="./../../assets/plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="./../../assets/plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+    <script src="./../../assets/plugins/easing/easing.js"></script>
+    <script src="./../../assets/plugins/progressbar/progressbar.min.js"></script>
+    <script src="./../../assets/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="./../../assets/plugins/jquery-datepicker/jquery-ui.js"></script>
+    <script src="./../../assets/js/custom.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    </body>
+    </html>
+{{ end }}

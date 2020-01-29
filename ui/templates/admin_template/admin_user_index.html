@@ -1,0 +1,54 @@
+{{ define "admin.users.layout" }}
+     <div class="wrapper">
+         {{ template "sidebar" . }}
+         <div class="main-panel">
+             {{ template "navbar" . }}
+             {{ template "admin.users.content" . }}
+             {{ template "admin_footer" . }}
+         </div>
+     </div>
+{{ end }}
+
+{{ define "admin.users.content"}}
+
+    <div class="">
+        <a class="btn btn-primary btn-lg" href="/admin/users/new" role="button">New User</a>
+    </div>
+    <table  class="table table-striped table-bordered " id="UsersTable" style="padding: 20px">
+        <thead>
+        <tr style="background:rgba(175,5,9,0.87) ">
+
+            <th scope="col" >ID</th>
+            <th  style="color: black"  scope="col">FullName</th>
+            <th  style="color: black" scope="col">Email</th>
+
+            <th  style="color: black" scope="col">Phone</th>
+            <th  style="color: black" scope="col">Password</th>
+            <th style="color: black"  scope="col">RoleID</th>
+            <th  style="color: black" scope="col">EDIT</th>
+            <th  style="color: black" scope="col">DELETE</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {{ range .Users }}
+            <tr>
+                <th class="ids" scope="row"> {{ .Id }} </th>
+                <td class=""> {{ .FullName }} </td>
+                <td class=""> {{ .Email }} </td>
+                <<td class=""> {{.Phone}} </td>
+                <td class=""> {{ .Password }} </td>
+                <td class="">{{.RoleID}}</td>
+                <td class=""> <a href="/admin/users/update?id={{ .Id }}"  class="btn btn-primary edit">Edit </a> </td>
+                <td class=""> <a class="btn btn-danger" href="/admin/users/delete?id={{ .Id }}">Delete</a> </td>
+            </tr>
+
+        {{end}}
+
+        </tbody>
+    </table>
+
+    <script src="../../assets/vendor/bootstrap/js/popper.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+{{ end }}

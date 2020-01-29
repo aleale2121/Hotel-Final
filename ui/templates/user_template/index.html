@@ -1,0 +1,22 @@
+{{ define "index.layout" }}
+    {{ template "index.content" .}}
+{{ end }}
+
+{{ define "index.content" }}
+    <div class="headerpart" style="display: block">
+        {{ template "header". }}
+        {{ template "menu"}}
+    </div>
+
+    <div class="mainbody  container-fluid" style="position: relative;display: block;">
+            {{  template "sampleroom" }}
+            <h1 style="text-align: center">Rate us</h1>
+            <div style="margin-left: 30%">
+                {{template "rating" .}}
+
+            </div>
+    </div>
+        <div class="footerpart" style="display: block">
+            {{  template "footer" }}
+        </div>
+{{ end }}

@@ -1,0 +1,102 @@
+
+
+html{ font-size: 100%; height: 100%; overflow-x: hidden; margin: 0px;  padding: 0px; touch-action: manipulation; }
+
+
+body{ font-size: 15px; font-family: 'Poppins', serif; margin: 0; font-weight: 400;
+	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; word-wrap: break-word; 
+	line-height: 1; margin: 0 50px; padding: 60px 0; height: 100vh; 
+	width: calc(100% - 100px); position: relative; z-index: 1; color: #333; }
+
+h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img, inpot, button{ margin: 0; padding: 0; }
+
+h1,h2,h3,h4,h5,h6{ line-height: 1.5; font-weight: inherit; }
+
+h1,h2,h3{ font-family: 'Poppins', cursive; }
+
+p{ line-height: 1.6; font-size: 1.05em; font-weight: 400; color: #777; }
+
+h1{ font-size: 4em; line-height: 1; }
+h2{ font-size: 2.2em; line-height: 1.1; }
+h3{ font-size: 1.8em; }
+h4{ font-size: 1.3em; }
+h5{ font-size: 1em; }
+h6{ font-size: .9em; letter-spacing: 1px; }
+
+a, button{ display: inline-block; text-decoration: none; color: inherit; line-height: 1; 
+	-webkit-transition: all .25s ease-in-out; transition: all .25s ease-in-out; }
+
+a:focus, a:active, a:hover,
+button:focus, button:active, button:hover,
+a b.light-color:hover{ text-decoration: none; color: #37D583; }
+
+b{ font-weight: 600; }
+
+img{ width: 100%; }
+
+li{ list-style: none; display: inline-block; }
+
+span{ display: inline-block; }
+
+button{ outline: 0; border: 0; background: none; cursor: pointer; }
+
+.icon{ font-size: 1.1em; display: inline-block; line-height: inherit; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before{ line-height: inherit; }
+
+b.max-bold{ font-weight: 700; }
+
+
+
+/* ---------------------------------
+2. COMMONS FOR PAGE DESIGN
+--------------------------------- */
+
+.display-table{ display: table; height: 100%; } 
+.display-table-cell{ display: table-cell; vertical-align: middle; } 
+
+.color-black{ color: #000; }
+.color-green{ color: #36D98A; }
+
+.margin-tb-10{ margin-top: 10px; margin-bottom: 10px; }
+
+.margin-b-5{ margin-bottom: 5px; }
+.margin-b-10{ margin-bottom: 10px; }
+.margin-b-30{ margin-bottom: 30px; }
+
+
+
+/*@keyframes full-opacity-anim{*/
+/*	0%{ opacity: 0; }*/
+/*	100%{ opacity: 1; }*/
+/*}*/
+
+
+/* ---------------------------------
+4. SLIDER
+--------------------------------- */
+.slidecontainer{
+	position: relative;
+	width: 100%;
+}
+.slider-section{ width: 100%; position: relative; z-index: 1; }
+
+.bg-img{ position: relative; left: 0; right: 0; z-index: -1;}
+
+.bg-1{ background-image: url(../../images/slider-1-1920x1080.jpg); }
+
+
+.rev_slider_wrapper.fullscreen-container{ width: 100%!important;
+	margin: 0 auto!important; left: auto!important;}
+
+.forcefullwidth_wrapper_tp_banner{  }
+
+.tp-bullet{ border-radius: 50px; }
+
+.tp-leftarrow,
+.tp-rightarrow{ border-radius: 50px; -webkit-transform: scale(1.3); transform: scale(1.3); }
+
+
+.visit-btn{ min-width: 150px!important; }
+
+

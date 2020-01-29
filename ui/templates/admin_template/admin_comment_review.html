@@ -1,0 +1,70 @@
+
+
+{{ define "admin.com.layout" }}
+
+    <div class="wrapper">
+        {{ template "sidebar" . }}
+        <div class="main-panel">
+            {{ template "navbar" . }}
+            {{ template "com.content" .}}
+            {{ template "admin_footer" . }}
+        </div>
+    </div>
+{{ end }}
+{{ define "com.content" }}
+    <div id="Home">
+        <table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Comment</th>
+                <th scope="col">date</th>
+                <th scope="col">Feedback</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{ range . }}
+                <tr>
+                    <th scope="row"> {{ .Id }} </th>
+                    <td> {{ .Name }} </td>
+                    <td> {{ .Email }} </td>
+                    <td> {{ .Comment }} </td>
+                    <td> {{ .Publish.Year }} {{ .Publish.Month }}<span>,</span> {{ .Publish.Day}}</td>
+                    <td> <a class="btn btn-warning" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to={{ .Email }}" target="_blank" >Send </a> </td>
+                    <td> <a class="btn btn-danger" href="/admin/com/delete?id={{ .Id }}">Delete</a> </td>
+
+                </tr>
+            {{ end }}
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+    <script>
+        // Material Design example
+        $(document).ready(function () {
+            $('#dtMaterialDesignExample').DataTable();
+            $('#dtMaterialDesignExample_wrapper').find('label').each(function () {
+                $(this).parent().append($(this).children());
+            });
+            $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('input').each(function () {
+                const $this = $(this);
+                $this.attr("placeholder", "Search");
+                $this.removeClass('form-control-sm');
+            });
+            $('#dtMaterialDesignExample_wrapper .dataTables_length').addClass('d-flex flex-row');
+            $('#dtMaterialDesignExample_wrapper .dataTables_filter').addClass('md-form');
+            $('#dtMaterialDesignExample_wrapper select').removeClass(
+                'custom-select custom-select-sm form-control form-control-sm');
+            $('#dtMaterialDesignExample_wrapper select').addClass('mdb-select');
+            $('#dtMaterialDesignExample_wrapper .mdb-select').materialSelect();
+            $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('label').remove();
+        });
+    </script>
+
+{{ end }}

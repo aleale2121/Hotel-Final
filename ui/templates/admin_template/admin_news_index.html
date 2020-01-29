@@ -1,0 +1,85 @@
+
+
+{{ define "admin.newss.layout" }}
+
+    <div class="wrapper">
+        {{ template "sidebar" . }}
+        <div class="main-panel">
+            {{ template "navbar" . }}
+            {{ template "newss.content" .}}
+            {{ template "admin_footer" . }}
+        </div>
+    </div>
+{{ end }}
+{{ define "newss.content" }}
+
+    <!-- ONCLICK="new_news_show()-->
+    <a style="width: 100px; margin: 50px;" class="btn btn-primary btn-block" href="/admin/news/new">New News</a>
+    <main style="padding: 100px ;display: none;" role="main" id="newNews" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2>Add New News Here</h2>
+        </div>
+    </main>
+        <div id="Home">
+
+            <table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{ range . }}
+                    <tr>
+                        <th scope="row"> {{ .Id }} </th>
+                        <td> {{ .Header }} </td>
+                        <td> {{ .Description }} </td>
+                        <td> <img src="/assets/img/{{ .Image }}" width="70rem" height="70rem" /> </td>
+                        <td> <a class="btn btn-warning" href="/admin/news/update?id={{ .Id }}" >Edit</a> </td>
+                        <td> <a class="btn btn-danger" href="/admin/news/delete?id={{ .Id }}">Delete</a> </td>
+                    </tr>
+                {{ end }}
+                </tbody>
+            </table>
+        </div>
+
+
+    <script type="text/javascript">
+        //Function To Display Popup
+        function new_news_show() {
+            document.getElementById('newNews').style.display = "block";
+            document.getElementById('Home').style.display = "none";
+
+        }
+        function news_update() {
+            document.getElementById('newsupdate').style.display="block";
+        }
+    </script>
+    <script>
+        // Material Design example
+        $(document).ready(function () {
+            $('#dtMaterialDesignExample').DataTable();
+            $('#dtMaterialDesignExample_wrapper').find('label').each(function () {
+                $(this).parent().append($(this).children());
+            });
+            $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('input').each(function () {
+                const $this = $(this);
+                $this.attr("placeholder", "Search");
+                $this.removeClass('form-control-sm');
+            });
+            $('#dtMaterialDesignExample_wrapper .dataTables_length').addClass('d-flex flex-row');
+            $('#dtMaterialDesignExample_wrapper .dataTables_filter').addClass('md-form');
+            $('#dtMaterialDesignExample_wrapper select').removeClass(
+                'custom-select custom-select-sm form-control form-control-sm');
+            $('#dtMaterialDesignExample_wrapper select').addClass('mdb-select');
+            $('#dtMaterialDesignExample_wrapper .mdb-select').materialSelect();
+            $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('label').remove();
+        });
+    </script>
+
+{{ end }}

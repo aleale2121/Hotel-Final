@@ -1,0 +1,174 @@
+
+{{ define "room_index2.layout" }}
+
+        {{template "header" .}}
+        {{with .FormInput.VErrors.Get "success" }}
+            <p style="text-align: center" class="alert alert-success"> {{ . }} </p>
+        {{end}}
+        {{template "room.layout" . }}
+        {{template "footer"}}
+
+
+{{ end }}
+
+{{define "room.layout"}}
+    <body>
+    <div class="rooms">
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container text-center magic_up">
+                        <div class="section_subtitle">luxury resort</div>
+                        <div class="section_title"><h2>Choose a Room</h2></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row room_row magic_up">
+                <div class="modal fade right" id="modalOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true" data-backdrop="false">
+                    <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="heading">Fill Order Information
+                                </p>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="white-text">&times;</span>
+                                </button>
+                            </div>
+                            {{with .FormInput.VErrors.Get "generics" }}
+                                <label class="text-danger" style="text-align: center">{{ . }}</label>
+                            {{end}}
+                            <div class="modal-body  ">
+                                <form method="POST" action="/rooms" autocomplete="off">
+                                    <input type="hidden" name="_csrf" value="{{ .FormInput.CSRF }}" />
+                                    <div class="row ">
+                                        <input  type="hidden" value="{{  .FormInput.Values.Get "roomId" }}" id="roomId22" name="roomId" style="margin-left: 20px;" />
+                                        <input  type="hidden" value="{{  .FormInput.Values.Get "room_price1" }}" id="room_price1" name="room_price1" style="margin-left: 20px;" />
+                                        <div class="form-group row">
+                                            <div class="col-md-10">
+                                                <label for="input" style="margin-left: 20px;">Bank Account Number</label>
+                                                {{with .FormInput.VErrors.Get "account" }}
+                                                    <label class="text-danger">{{ . }}</label>
+                                                {{end}}
+                                                <label>
+                                                    <input type="number" value="{{  .FormInput.Values.Get "account" }}" name="account" placeholder="Account Number" width="400" style="margin-left: 20px;" required/>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <label for="input" style="margin-left: 20px;">Arrival Date</label>
+                                                {{with .FormInput.VErrors.Get "arrival" }}
+                                                    <label class="text-danger">{{ . }}</label>
+                                                {{end}}
+                                                <input id="input" value="{{  .FormInput.Values.Get "arrival" }}" name="arrival" placeholder="arrival Date and Time" width="400" style="margin-left: 20px;" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" >
+                                            <div class="col-sm-10">
+                                                <label for="input2" style="margin-left: 20px;"> Departure Date</label>
+                                                {{with .FormInput.VErrors.Get "departure" }}
+                                                    <label class="text-danger">{{ . }}</label>
+                                                {{end}}
+                                                <input id="input2" value="{{  .FormInput.Values.Get "departure" }}" name="departure" placeholder="departure Date and Time" width="400" style="margin-left: 20px;" required />
+                                            </div>
+                                        </div>
+                                        <div class="col-9" style="margin: 10px">
+                                            <div class="form-group row">
+                                                <div class="col-sm-10">
+                                                    <label for="adults">Adults</label>
+                                                    {{with .FormInput.VErrors.Get "adults" }}
+                                                        <label class="text-danger">{{ . }}</label>
+                                                    {{end}}
+                                                    <input type="number" value="{{  .FormInput.Values.Get "adults" }}" max="4" class="form-control" name="adults" id="adults" required/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-10">
+                                                    <label for="child">Children</label>
+                                                    {{with .FormInput.VErrors.Get "child" }}
+                                                        <label class="text-danger">{{ . }}</label>
+                                                    {{end}}
+                                                    <input type="number" max="4" value="{{  .FormInput.Values.Get "childs" }}" class="form-control" name="childs" id="child" required/>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer justify-content-center">
+                                        <button type="submit" class="btn btn-info">Reserve</button>
+                                        <a type="button" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                    {{ range .Roomslist }}
+                        <div class="col-lg-4 room_col">
+                            <div class="room">
+                                <div class="room_image"><img src="../../assets/img/{{.Image}}" alt="Room Image"></div>
+                                <div class="room_content text-center">
+                                    <input type="hidden" class="room_price" readonly value="{{.Price}}" id="room_p"/>
+                                    <div class="room_price" readonly value="{{.Price}}" id="room_p">From $ {{.Price}} / <span>Day-Night</span></div>
+                                    <div class="room_type">{{.Type.RoomType}}</div>
+                                    <div class="room_title"><a href="#">Deluxe Suite</a></div>
+                                    <div class="room_text">
+                                        <p>{{.Description}}</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-block booknow" id="popup" value="{{.Id}}" data-toggle="modal" data-target="#modalOrder"  style="color: #ffffff; margin-top: 20px;">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    {{ end }}
+
+            </div>
+        </div>
+    </div>
+    </body>
+    {{ if (eq .ActionMode "RoomReserve") }}
+        <script>
+            $('#modalOrder').modal('show');
+        </script>
+    {{ end }}
+    <script  src="./../../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../../assets/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="../../assets/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script>
+        $('#input').datetimepicker({
+             footer: true,
+            format: 'yyyy-mm-dd HH:MM',
+            onShow:function (ct) {
+                 this.setOptions({
+                     maxDate:$('#input2').val() ? $('#input2').val() :false
+                 })
+            }
+        });
+        $('#input2').datetimepicker({
+            footer: true,
+            // format:'yyyy MM dd - hh :ii',
+            format: 'yyyy-mm-dd HH:MM',
+            onShow:function (ct) {
+                this.setOptions({
+                    minDate:$('#input').val() ? $('#input').val() :false
+                })
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.booknow').click(function() {
+                let $id = $(this).val();
+                 let $pr =$(this).parent().children('#room_p').val();
+                $('#roomId22').val($id);
+                $('#room_price1').val($pr);
+                $('#updateRoomModal').modal('show');
+            });
+        });
+    </script>
+{{end}}

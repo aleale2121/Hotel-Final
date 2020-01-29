@@ -1,0 +1,15 @@
+{{ define "index.layout" }}
+{{ template "index.content" . }}
+{{ end }}
+{{ define "index.content" }}
+
+<div class="wrapper">
+    {{ template "sidebar" . }}
+    <div class="main-panel">
+        {{ template "navbar" . }}
+        {{ template "content_layout" }}
+        {{ template "admin_footer" . }}
+    </div> 
+
+</div>
+{{ end }}

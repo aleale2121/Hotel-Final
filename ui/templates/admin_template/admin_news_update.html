@@ -1,0 +1,64 @@
+
+{{ define "admin.newss.update.layout" }}
+    {{ template "navbar" . }}
+    {{ template "sidebar" . }}
+    {{ template "admin.newss.update.content" . }}
+    {{ template "admin_footer" . }}
+{{ end }}
+{{ define "admin.newss.update.content"}}
+
+    <main role="main" id="newsupdate" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2>Update News Content</h2>
+        </div>
+        <div class="container">
+            {{with .FormInput.VErrors.Get "success" }}
+                <p style="text-align: center" class="alert alert-success"> {{ . }} </p>
+            {{end}}
+            {{with .FormInput.VErrors.Get "generic" }}
+                <label class="text-danger">{{ . }}</label>
+            {{end}}
+            <form method="POST" action="/admin/news/update" enctype="multipart/form-data">
+                <input type="hidden" name="_csrf" value="{{ .CSRF }}" />
+                <input type="hidden" name="id" value="{{ .New.Id }}" />
+                <input type="hidden" name="image" value="{{ .New.Image }}" />
+                <div class="form-group row">
+                    <label for="name" class="col-lg-12 col-form-label">News Name</label>
+                    {{with .FormInput.VErrors.Get "name"}}
+                        <label class="text-danger col-lg-12 ">{{.}}</label>
+                    {{end}}
+                    <div class="col-lg-12 ">
+                        <input type="text" class="form-control " name="name" id="name" placeholder="News Name" value="{{ if .New.Header }} {{ .New.Header }} {{ end }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    {{with .FormInput.VErrors.Get "description"}}
+                        <label class="text-danger">{{.}}</label>
+                    {{end}}
+                    <label for="description" class="col-lg-12  col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="description" id="description">{{ if .New.Description }} {{ .New.Description }} {{ end }}</textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="col-lg-12 ">
+                    <img src="/assets/img/{{ .New.Image }}" width="80px" height="80px" />
+                </div>
+                <div class="form-group">
+                    {{with .FormInput.VErrors.Get "catimg"}}
+                        <label class="text-danger">{{.}}</label>
+                    {{end}}
+                    <label for="catimg" class="col-lg-12  col-form-label">Upload New Image</label>
+                    <div class="col-lg-12 ">
+                        <input type="file" required class="form-control-file" value="/assets/img/{{ .New.Image }}" name="catimg" id="catimg">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-12 ">
+                        <button type="submit" class="btn btn-primary float-right">Update News</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+{{ end }}

@@ -1,0 +1,20 @@
+{{ define "room_index2.layout"  }}
+
+
+    {{ template "room_index.content" . }}
+
+
+{{ end }}
+
+{{ define "room_index.content" }}
+
+    <div class="wrapper">
+        {{ template "sidebar"}}
+        <div class="main-panel">
+            {{ template "navbar" }}
+            {{ template "table" .}}
+            {{ template "admin_footer"}}
+        </div>
+
+    </div>
+{{ end }}

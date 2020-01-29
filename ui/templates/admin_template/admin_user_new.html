@@ -1,0 +1,75 @@
+{{ define "admin.user.new.layout" }}
+
+    <div class="wrapper">
+        {{ template "sidebar" . }}
+        <div class="main-panel">
+            {{ template "navbar" . }}
+            {{ template "admin.user.new.content" . }}
+            {{ template "admin_footer" . }}
+        </div>
+    </div>
+{{ end }}
+
+{{ define "admin.user.new.content"}}
+    <body>
+    <!-- Default form register -->
+    <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33 align-self-md-center">
+        <form class="text-center border border-light p-2 col-md-3" method="post" action="/admin/users/new" autocomplete="off">
+            <p class="h2 mb-2">Sign up</p>
+            <input type="hidden" name="_csrf" value="{{ .FormInput.CSRF }}" />
+            <label for="fullname" class="col-sm-10">Fullname</label>
+            <input id="defaultRegisterFormFirstName" class="form-control mb-4" autocomplete="off" value="{{ .FormInput.Values.Get "fullname" }}" type="text" name="fullname" placeholder="Full Name">
+            {{with .FormInput.VErrors.Get "fullname"}}
+                <label class="text-danger">{{.}}</label>
+            {{end}}
+
+
+            <!-- E-mail -->
+            <label for="email" class="col-sm-10">Email</label>
+            <input type="email" name="email" id="defaultRegisterFormEmail" autocomplete="off" value="{{ .FormInput.Values.Get "email" }}"  class="form-control mb-4" placeholder="E-mail">
+            {{with .FormInput.VErrors.Get "email"}}
+                <label class="text-danger">{{.}}</label>
+            {{end}}
+
+            <label for="phone" class="col-sm-10">Phone</label>
+            <input id="defaultRegisterFormFirstName" autocomplete="off" value="{{ .FormInput.Values.Get "phone" }}"  class="form-control mb-4" type="text" name="phone" placeholder="Phone Number">
+            {{with .FormInput.VErrors.Get "phone"}}
+                <label class="text-danger">{{.}}</label>
+            {{end}}
+            <!-- Password -->
+
+
+            <label for="password" class="col-sm-10">Password</label>
+            <input id="defaultRegisterFormPassword" autocomplete="off" value="{{ .FormInput.Values.Get "password" }}"  class="form-control mb-4" type="password" name="password" placeholder="Password">
+            {{with .FormInput.VErrors.Get "password"}}
+                <label class="text-danger">{{.}}</label>
+            {{end}}
+
+            <label for="password_confirmed" class="col-sm-10">Confirm Password</label>
+            {{with .FormInput.VErrors.Get "confirmpassword"}}
+                <label class="text-danger">{{.}}</label>
+            {{end}}
+            <input id="defaultRegisterFormPassword" autocomplete="off" value="{{ .FormInput.Values.Get "confirmpassword" }}"  class="form-control mb-4" type="password" name="confirmpassword" placeholder="Confirmed Password">
+
+            <label for='role' class='col-form-label'>Role</label>
+
+            <select required name='role' id='role' class='form-control'>
+                <option value='' disabled selected>Select Role</option>
+                {{ range .Roles }}
+                    <option value='{{ .ID }}'> {{ .Name }}</option>
+                {{ end }}
+            </select>
+            {{with .FormInput.VErrors.Get "role"}}
+                <label class="text-danger">{{.}}</label>
+            {{end}}
+
+            <!-- Sign up button -->
+            <input class="btn btn-info my-4 btn-block" type="submit"/>
+
+        </form>
+    </div>
+    <!-- Default form register -->
+    <script src="../../assets/vendor/bootstrap/js/popper.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+{{ end }}

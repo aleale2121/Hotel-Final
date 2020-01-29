@@ -1,0 +1,121 @@
+{{ define "rating"}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        .star{
+            color: #ff2d27;
+            font-size: 2.0rem;
+            padding: 0 1rem;
+        }
+        .star::before{
+            content: '\2606';    /* star outline */
+            cursor: pointer;
+        }
+        .star.rated::before{
+            content: '\2605';
+        }
+
+        .stars{
+            counter-reset: rateme 0;
+            font-size: 2.0rem;
+            font-weight: 900;
+        }
+        .star.rated{
+            color: green;
+            counter-increment: rateme 1;
+        }
+        .stars::after{
+            /*content: counter(rateme) '/5';*/
+        }
+        .sub-menu {
+            display: inline;
+            float:left;
+        }
+
+        .sub-menu .menu-title {
+            clear: both;
+            margin-top: 10px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+</head>
+<body>
+
+<form method="post" action="/rate" style="margin-bottom: 30px">
+    <div class="stars" data-rating="0">
+         <span class="sub-menu">
+             <span id="i1" class="star" content="1">&nbsp;</span><br>
+         </span>
+        <span id="i2" class="sub-menu">
+            <span class="star" content="2">&nbsp;</span><br>
+        </span>
+        <span id="i3" class="sub-menu">
+             <span class="star" content="3">&nbsp;</span><br>
+         </span>
+        <span id="i4" class="sub-menu">
+            <span class="star" content="4">&nbsp;</span><br>
+        </span>
+        <span id="i5" class="sub-menu">
+            <span class="star" content="5">&nbsp;</span><br>
+        </span>
+        <span> <input type="submit" value="Confirm" id="submit" class="btn btn-outline-primary"></span>
+        <input type="hidden" id="result" value="0" name="hidden_rate_value_container">
+    </div>
+</form>
+
+<script>
+    let stars = document.querySelectorAll('.star');
+    for (let i = 0; i < {{.AverageRating}}; i++) {
+        let star=stars[i]
+        star.classList.add('rated');
+    }
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        let stars = document.querySelectorAll('.star');
+        stars.forEach(function(star){
+
+
+            star.addEventListener('click', setRating);
+        });
+
+        let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+        let target = stars[rating - 1];
+        target.dispatchEvent(new MouseEvent('click'));
+    });
+
+    function setRating(ev){
+        let span = ev.currentTarget;
+        let stars = document.querySelectorAll('.star');
+        let match = false;
+        let num = 0;
+        stars.forEach(function(star, index){
+            if(match){
+                star.classList.remove('rated');
+            }else{
+                star.classList.add('rated');
+            }
+            if(star === span){
+                match = true;
+                num = index + 1;
+            }
+        });
+        document.querySelector('.stars').setAttribute('data-rating', num);
+        var rateValue=document.getElementById("result");
+        rateValue.value=num;
+
+    }
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
+{{end}}

@@ -1,0 +1,257 @@
+
+{{ define "news_layout" }}
+    <div class="headerpart" style="display: block">
+        {{ template "header" .}}
+        {{ template "menu"}}
+    </div>
+
+    <div class="mainbody  container-fluid" style="position: relative;display: block;">
+        {{  template "news_cont". }}
+    </div>
+    <div class="footerpart" style="display: block">
+        {{  template "footer" }}
+    </div>
+{{ end }}
+
+{{define "news_cont"}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>News-Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../assets/all/images/icons/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/fonts/themify/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/vendor/lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/all/css/main.css">
+    <link rel="stylesheet" href="../../assets/events/css/all.css">
+
+
+</head>
+
+<body class="animsition">
+<main >
+<section>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <div class="p-t-80 p-b-124 bo5-r h-full p-r-50 p-r-0-md bo-none-md">
+                <!-- Block4 -->
+
+                {{ range .News }}
+                    <div class="blo4 p-b-63">
+                        <div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
+                            <a href="#">
+                                <img src="../assets/img/{{ .Image }}" alt="IMG-BLOG">
+                            </a>
+
+                            <div class="date-blo4 flex-col-c-m">
+								<span class="txt31" >
+									{{.Publish.Day}} <span> , </span> {{ .Publish.Month }}
+
+								</span>
+
+                                <span class="txt31">
+									{{ .Publish.Year }}
+								</span>
+                            </div>
+                        </div>
+                        <div class="text-blo4 p-t-33">
+                            <h4 class="p-b-16">
+                                <a href="#" class="tit9">{{ .Header }}</a>
+                            </h4>
+
+                            <div class="txt32 flex-w p-b-24">
+								<span>
+									by hotel Admin
+									<span class="m-r-6 m-l-4">|</span>
+								</span>
+
+                                    <span>
+									thanks for watching
+									<span class="m-r-6 m-l-4">|</span>
+								</span>
+
+                            </div>
+
+                            <p>
+                                {{ .Description }}
+                            </p>
+
+                        </div>
+                    </div>
+                {{end}}
+                <!-- Pagination -->
+                <div class="pagination flex-l-m flex-w m-l--6 p-t-25">
+                    <a href="/News"  class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
+                    <a href="/News" name class="item-pagination flex-c-m trans-0-4">2</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+            <div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
+
+
+                <!-- Most Popular -->
+
+                <div class="popular">
+                    <h4 class="txt33 p-b-35 p-t-58">
+                        Most popular
+                    </h4>
+                    {{range .News }}
+                    <ul>
+                        <li class="flex-w m-b-25">
+                            <div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
+                                <a href="#">
+                                    <img src="../assets/img/{{ .Image }}" alt="IMG-BLOG">
+                                </a>
+                            </div>
+
+                            <div class="size28">
+                                <a href="#" class="dis-block txt28 m-b-8">
+                                    {{ .Header}}
+                                </a>
+
+                                <span class="txt14">
+										{{ .Publish.Day}} <span>min ago</span>
+									</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                    {{end}}
+                </div>
+
+
+                <!-- Archive -->
+                <div class="archive">
+                    <h4 class="txt33 p-b-20 p-t-43">
+                        Archive
+                    </h4>
+
+                    <ul>
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                uly 2018
+                            </a>
+
+                            <span class="txt29">
+									(9)
+								</span>
+                        </li>
+
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                June 2018
+                            </a>
+
+                            <span class="txt29">
+									(39)
+								</span>
+                        </li>
+
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                May 2018
+                            </a>
+
+                            <span class="txt29">
+									(29)
+								</span>
+                        </li>
+
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                April 2018
+                            </a>
+
+                            <span class="txt29">
+									(35)
+								</span>
+                        </li>
+
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                March 2018
+                            </a>
+
+                            <span class="txt29">
+									(22)
+								</span>
+                        </li>
+
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                February 2018
+                            </a>
+
+                            <span class="txt29">
+									(32)
+								</span>
+                        </li>
+
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                January 2018
+                            </a>
+
+                            <span class="txt29">
+									(21)
+								</span>
+                        </li>
+
+                        <li class="flex-sb-m p-t-8 p-b-8">
+                            <a href="#" class="txt27">
+                                December 2017
+                            </a>
+
+                            <span class="txt29">
+									(26)
+								</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</section>
+</main>
+<script src="../../assets/events/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/animsition/js/animsition.min.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/bootstrap/js/popper.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/slick/slick.min.js"></script>
+<script type="text/javascript" src="../../assets/all/js/slick-custom.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/parallax100/parallax100.js"></script>
+<script type="text/javascript">
+    $('.parallax100').parallax100();
+</script>
+<script type="text/javascript" src="../../assets/all/vendor/countdowntime/countdowntime.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/lightbox2/js/lightbox.min.js"></script>
+<script type="text/javascript" src="../../assets/all/vendor/isotope/isotope.pkgd.min.js"></script>
+<script src="../../assets/all/js/main.js"></script>
+
+</body>
+
+</html>
+{{end}}
